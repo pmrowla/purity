@@ -108,8 +108,11 @@ prompt_purity_setup() {
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow}═%f "
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{cyan}✩%f "
 
+    ZSH_THEME_VIRTUALENV_PREFIX="%F{cyan}py:%f%F{yellow}"
+    ZSH_THEME_VIRTUELENV_SUFFIX="%f"
+
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%F{blue}%c$(git_prompt_info) $(git_prompt_status) %(?.%F{green}.%F{red})❯%f '
+    PROMPT='%F{blue}%c$(git_prompt_info) $(git_prompt_status) $(virtualenv_prompt_info) %(?.%F{green}.%F{red})❯%f '
 	RPROMPT='%F{red}%(?..⏎)%f'
 }
 
